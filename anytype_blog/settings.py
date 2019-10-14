@@ -37,12 +37,29 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Thard party app
-    'ckeditor',
 
     # Project App
     'post.apps.PostConfig', # Another Way 'blog'
     'user.apps.UserConfig',
+
+    # DJANGO REST_FRAMEWORK
+    'rest_framework',
+
+    # DJANGO CORS-LIBRARY
+    'corsheaders',
+
+    # DJANGO ALLAUTH AUTENTICATIONS
+    'django.contrib.sites',
+
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    
+    # Extranal Text Editor
+    'ckeditor',
+
+    # DJANGO CRISPY FORM
+    'crispy_forms',
     
 ]
 
