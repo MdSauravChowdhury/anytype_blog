@@ -50,6 +50,7 @@ class BlogView(ListView):
         
         context = super().get_context_data(**kwargs)
         context['category_count'] = category_count # CATEGORY COUNT
+        context['category_item'] =  Category.objects.all() # show side tag category
         context["last_three_post"] = Post.objects.order_by('-id')[:3]
         return context
     
@@ -65,6 +66,7 @@ class PostView(DetailView):
         category_count = get_category_count()
         context = super().get_context_data(**kwargs)
         context['category_count'] = category_count
+        context['category_item'] =  Category.objects.all() # show side tag category
         context["last_three_post"] = Post.objects.order_by('-id')[:3]
 
         return context
