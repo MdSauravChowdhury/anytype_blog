@@ -20,7 +20,7 @@ TEMPLATES_DIRS = os.path.join(BASE_DIR, 'templates')
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'dep*=l3rux6%82160m66w54535of+56!#ok+u003o=50bp(rlxc6t^yco'
+SECRET_KEY = 'dep*=l3rux6%82160m66wof+5645454!#ok+u3o=50bp(rlxc6t^yco'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # Project App
     'post.apps.PostConfig', # Another Way 'blog'
     'user.apps.UserConfig',
+    'content_management',
 
     # DJANGO REST_FRAMEWORK
     'rest_framework',
@@ -58,10 +59,15 @@ INSTALLED_APPS = [
     # Extranal Text Editor
     'ckeditor',
 
+    # BOOTSTRAP CSS FRAMEWORK
+    'bootstrap4',
+
     # DJANGO CRISPY FORM
     'crispy_forms',
     
 ]
+# DJANGO ALLATUH ID
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -157,6 +163,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # EMAIL PASSWORD  SMTP
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'sauravsurjo32@gamil.com'
-EMAIL_HOST_PASSWORD = 'saurav.cf'
+EMAIL_HOST_USER = 'mdsauravchowdhury@gmail.com'
+DEFAULT_FROM_EMAIL = 'mdsauravchowdhury@gmail.com'
+SERVER_EMAIL= 'mdsauravchowdhury@gmail.com'
+EMAIL_HOST_PASSWORD = 'chowdhury5679'
 EMAIL_PORT = 587
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

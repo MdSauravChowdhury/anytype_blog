@@ -3,6 +3,7 @@ from django.shortcuts import render,redirect
 from django.views.generic import TemplateView,ListView, DetailView
 
 from .models import Post
+from .models import Category
 from .models import EmailSubcribe
 from .forms import EmailNews
 
@@ -24,12 +25,12 @@ def searchResult(request):
     context = {
         'queryset':queryset
     }
-    return render(request, 'search_result.html', context)   
+    return render(request, 'blog/search_result.html', context)   
 
 
 class IndexView(TemplateView):
 
-    template_name = 'index.html'
+    template_name = 'blog/index.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -41,9 +42,11 @@ class IndexView(TemplateView):
 
 class BlogView(ListView):
 
-    template_name = 'blog.html'
+    template_name = 'blog/blog.html'
     model = Post
     context_object_name = "post"
+    ordering = '-timestamp'
+    paginate_by = 6
 
     def get_context_data(self, **kwargs):
         category_count = get_category_count() # CATEGORY COUNT
@@ -57,7 +60,7 @@ class BlogView(ListView):
 
 class PostView(DetailView):
 
-    template_name = 'post.html'
+    template_name = 'blog/post.html'
     model = Post
     context_object_name = "singel_blog"
 
