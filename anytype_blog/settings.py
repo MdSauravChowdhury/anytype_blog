@@ -23,9 +23,10 @@ TEMPLATES_DIRS = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = 'dep*=l3rux6%82160m66w54535of+56!#ok+u003o=50bp(rlxc6t^yco'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['anytypeblog.herokuapp.com']
+ALLOWED_HOSTS = ['saurav71.pythonanywhere.com']
+# ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -151,6 +152,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static')
+# ]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
